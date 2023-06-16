@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* adicionando imagem de fundo */
+    background: url('../img/bg.jpg') fixed no-repeat;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; 
+    
+  }
+  
+  /* terminar */
+  a {
+    color: white;
+    text-decoration: none;
+    transition: 0.9s;
+    padding: 5px 20px;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    font-size: 30px;
+    text-transform: capitalize;
+    letter-spacing: 10px;
+  }
+  
+  
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background-image: linear-gradient(to right, orange, purple, green);
+    background-size: 500% 100%;
+    animation: degrade_animado 2.0s infinite alternate;
+    height: 7vh;
+  }
+  
+  @keyframes degrade_animado {
+    0%{
+      background-position-x: 0%;
+    }
+    100%{
+      background-position-x: 100%;
+    }
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 10px;
+    margin-left: 32px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-list {
+      position: fixed;
+      top: 8vh;
+      right: 0;
+      width: 30vw;
+      height: 10vh;
+      background: #23232e38;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.2s ease-in;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+  
+  
+  
+  .container {
+    position: relative;
+    height: 0vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+  /* Card */
+  .card {
+   
+    width: 290px;
+    height: 400px;
+    margin-top: 15rem;
+    background-color: rgb(255, 192, 203);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 10px 0px 20px black;
+    transition: 0.2s;
+  }
+  
+  /* Card Header*/
+  .card-header {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+  }
+  
+  .card-img {
+    min-width: 100%;
+    width: auto;
+    height: 100%;
+  }
+  
+  /* Card Body */
+  .card-body {
+    height: 170px;
+    padding: 15px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  .card-local {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .card-titulo {
+    font-size: 32px;
+    margin: 15px 0;
+  }
+  
+  .card-texto {
+    font-size: 14px;
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+  /* Card Footer */
+  .card-footer {
+    margin-top: 155px;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .card-footer a {
+    color: white;
+    display: block;
+    padding: 11px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 400;
+    border-radius: 30px;
+
+  }
+  
+  /* Cores Cards */
+  .card-1 .card-footer {
+    background-color: #1c65aa;
+    border-radius: 0px;
+    margin-top: 10rem;
+
+  }
+  
+  .card-1 .card-local {
+    color: #0000ff;
+  }
+  
+  .card-2 .card-footer {
+    background-color: #d12761;
+    border-radius: 0px;
+    margin-top: 10rem;
+
+  }
+  
+  .card-2 .card-local {
+    color: #d12761;
+  }
+  
+  .card-3 .card-footer {
+    background-color: #1b1ee7;
+    border-radius: 0px;
+    margin-top: 10rem;
+
+  }
+  
+  .card-3 .card-local {
+    color: #0014c7;
+  }
+  
+  /* Animação Hover */
+  .card:hover {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+  

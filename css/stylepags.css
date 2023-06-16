@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  /* adicionando imagem de fundo */
+  background: url('../img/bg.jpg') fixed no-repeat;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; 
+}
+
+
+.logo {
+  font-size: 20px;
+  text-transform: capitalize;
+  letter-spacing: 10px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: 0.9s;
+} 
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(to right, orange, purple, green);
+  background-size: 500% 100%;
+  animation: degrade_animado 2.0s infinite alternate;
+  height: 7vh;
+}
+
+@keyframes degrade_animado {
+  0%{
+    background-position-x: 0%;
+  }
+  100%{
+    background-position-x: 100%;
+  }
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 10px;
+  margin-left: 32px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #ffffff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    position: fixed;
+    top: 8vh;
+    right: 0;
+    width: 30vw;
+    height: 10vh;
+    background: #ffffff38;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in;
+  }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+
+.principal{
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+/* centraliza a div */
+main.container {
+    background: rgba(255, 192, 203, 0);
+    width: 420px;
+    height: 350px;
+    padding: 2rem;
+    box-shadow: 0px 0px 20px black;
+    border-radius: 8px;
+    position: relative;
+    
+}
+
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+main h2::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 360px;
+    bottom: -10px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #5709ff, #00e061);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.input-field input {
+    outline: none;
+    font-size: 0.9rem;
+    color: rgb(19, 18, 18);
+    width: 100%;
+}
+
+.input-field input::placeholder {
+    color: rgb(253, 253, 253);
+    text-align: center;
+}
+div .underline{
+  padding: 1rem;
+}
+
+input::placeholder {
+  color: rgba(234, 225, 225, 0);
+}
+
+input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+input {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+}
+
+p {
+  margin-top: 30px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+
+a {
+  color: rgb(0, 17, 255);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
